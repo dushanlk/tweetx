@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.tweetx.search</groupId>
         <artifactId>tweetx-search</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <groupId>com.tweetx.search.core</groupId>
