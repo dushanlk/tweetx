@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="tweetx-distro">
+    <feature name="tweetx-runtime" description="Runtime" version="0.0.1">
+        <feature>transport-http</feature>
+        <feature dependency="true">shell</feature>
+        <feature prerequisite="true">wrapper</feature>
+        <bundle>mvn:org.apache.karaf.shell/org.apache.karaf.shell.core/4.2.0</bundle>
+        <bundle>mvn:org.apache.karaf.wrapper/org.apache.karaf.wrapper.core/4.2.0</bundle>
+        <bundle>mvn:com.tweetx.search.core.rest/tweetx-rest/0.0.1</bundle>
+    </feature>
+    <feature name="transport-http" description="HTTP Transport" version="0.0.1">
+        <bundle dependency="true">mvn:javax.servlet/javax.servlet-api/3.1.0</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-client/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-http/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-util/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-io/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-proxy/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty.websocket/websocket-api/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty.websocket/websocket-common/9.4.6.v20170531</bundle>
+        <bundle dependency="true">mvn:org.eclipse.jetty.websocket/websocket-client/9.4.6.v20170531</bundle>
+        <capability>esh.tp;feature=httpclient;version=9.4.6.v20170531</capability>
+    </feature>
+    <feature name="tweetx-distro" description="tweetx-distro" version="0.0.1">
+        <feature version="0.0.1" prerequisite="false" dependency="false">tweetx-runtime</feature>
+        <feature version="0.0.1" prerequisite="false" dependency="false">transport-http</feature>
+    </feature>
+</features>
