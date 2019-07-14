@@ -6,3 +6,6 @@
 /builds/tweetx-server-0.0.1/data/port
 
 .idea
+data
+.m2
+lock
